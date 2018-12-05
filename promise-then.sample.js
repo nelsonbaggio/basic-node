@@ -37,7 +37,8 @@ function getAddress(id) {
     });
 }
 
-getUser().then(user => {
+getUser()
+.then(user => {
     return getPhone(user.id).then(phone => {
         return {
             user: user,
