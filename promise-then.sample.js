@@ -37,21 +37,21 @@ function getAddress(id) {
     });
 }
 
-getUser().then((user) => {
-    return getPhone(user.id).then((phone) => {
+getUser().then(user => {
+    return getPhone(user.id).then(phone => {
         return {
             user: user,
             phone: phone
         }
     });
 })
-.then((result) => {
-    return getAddress(result.user.id).then((adress) => {
+.then(result => {
+    return getAddress(result.user.id).then(adress => {
         result.address = adress;
         return result;
     });
 })
-.then((result) => {
+.then(result => {
     console.log(`
         Nome: ${result.user.name},
         Endereço: ${result.address.street} ${result.address.number},
