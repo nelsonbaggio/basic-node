@@ -14,8 +14,8 @@ async function main() {
         const result = await service.getPeople('a');
 
         console.time('map');
-        const names = result.results.myMap(people => people.name);
-        // const names = result.results.map(people => people.name);
+        const names = result.myMap(people => people.name);
+        // const names = result.map(people => people.name);
         console.timeEnd('map');
 
         console.log('names com map', names);

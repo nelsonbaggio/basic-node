@@ -13,7 +13,7 @@ Array.prototype.myFilter = function (callback) {
 
 async function main() {
     try {
-        const { results } = await getPeople('a');
+        const results = await getPeople('a');
         const lars = results
             // .filter(item => {
             .myFilter(item => {

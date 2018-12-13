@@ -6,8 +6,8 @@ async function main() {
         const result = await service.getPeople('a');
         
         console.time('for');
-        for (let i = 0; i < result.results.length; i++) {
-            const people = result.results[i];
+        for (let i = 0; i < result.length; i++) {
+            const people = result[i];
             names.push(people.name)
         }
         console.timeEnd('for');
@@ -15,8 +15,8 @@ async function main() {
         
         names = [];
         console.time('for in');
-        for (let i in result.results) {
-            const people = result.results[i];
+        for (let i in result) {
+            const people = result[i];
             names.push(people.name);
         }
         console.timeEnd('for in');
@@ -24,7 +24,7 @@ async function main() {
 
         names = [];
         console.time('for of');
-        for (people of result.results) {
+        for (people of result) {
             names.push(people.name);
         }
         console.timeEnd('for of');
@@ -32,7 +32,7 @@ async function main() {
 
         names = [];
         console.time('for each');
-        result.results.forEach(people => {
+        result.forEach(people => {
             names.push(people.name);
         });
         console.timeEnd('for each');
